@@ -14,9 +14,11 @@ infra_group.add_argument('--ip', action="append",
 parser.add_argument('--to',
                     default='dev', help='Recipient of message',
                     required=True, metavar=('address@domain.com'))
+# it put from arguments to args.sender variable
 parser.add_argument('--from',
                     default='null@ovh.net', help='Sender address',
-                    required=False, metavar=('address@domain.com'))
+                    required=False, metavar=('address@domain.com')
+                    dest='sender')
 parser.add_argument('--data-file',
                     help='Path to file with whole email (DATA)')
 parser.add_argument('--recipients-file',
